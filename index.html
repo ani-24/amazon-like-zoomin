@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="./small.jpg" alt="" />
+    </div>
+    <div class="enlarged-img"></div>
+    <script>
+      const img = document.querySelector("img");
+      const enlargedImg = document.querySelector(".enlarged-img");
+      let bgX = enlargedImg.style.backgroundPositionX;
+      let bgY = enlargedImg.style.backgroundPositionY;
+      img.addEventListener("mouseenter", () => {
+        enlargedImg.style.display = "inline-block";
+      });
+      img.addEventListener("mousemove", (e) => {
+        let x = e.offsetX - img.offsetLeft;
+        let y = e.offsetY - img.offsetTop;
+        enlargedImg.style.backgroundPositionX = `${bgX - x}px`;
+        enlargedImg.style.backgroundPositionY = `${bgY - y}px`;
+      });
+      img.addEventListener("mouseleave", () => {
+        enlargedImg.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
