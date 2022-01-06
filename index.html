@@ -15,16 +15,14 @@
     <script>
       const img = document.querySelector("img");
       const enlargedImg = document.querySelector(".enlarged-img");
-      let bgX = enlargedImg.style.backgroundPositionX;
-      let bgY = enlargedImg.style.backgroundPositionY;
       img.addEventListener("mouseenter", () => {
         enlargedImg.style.display = "inline-block";
       });
       img.addEventListener("mousemove", (e) => {
         let x = e.offsetX - img.offsetLeft;
         let y = e.offsetY - img.offsetTop;
-        enlargedImg.style.backgroundPositionX = `${bgX - x}px`;
-        enlargedImg.style.backgroundPositionY = `${bgY - y}px`;
+        enlargedImg.style.backgroundPositionX = `${-x}px`;
+        enlargedImg.style.backgroundPositionY = `${-y}px`;
       });
       img.addEventListener("mouseleave", () => {
         enlargedImg.style.display = "none";
