@@ -15,7 +15,7 @@
 .enlarged-img {
   height: 385px;
   width: 640px;
-  background: url("./small.jpg");
+  background: url("./large.jpg");
   background-repeat: no-repeat;
   background-size: 200%;
   display: none;
